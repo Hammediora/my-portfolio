@@ -1,4 +1,3 @@
-// src/components/sharedHeader/Certifications.js
 import React from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemIcon, ListItemText, Link, } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -18,7 +17,6 @@ const Certifications = ({ expanded, onAccordionToggle }) => {
 
       <AccordionDetails>
         <List>
-          {/* Certifications */}
           <ListItem>
             <ListItemIcon><SchoolIcon /></ListItemIcon>
             <ListItemText primary="AWS Certified Solutions Architect – Associate" />

@@ -1,37 +1,201 @@
 import React from 'react';
-import { Paper, Typography,} from '@mui/material';
+import { Paper, Typography, Box, Divider, List, ListItem, ListItemIcon, Tooltip } from '@mui/material';
+import { Work, Code, Build, School, Group } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+
+// Import Swiper and required modules
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules'; 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 const WorkExperience = () => {
-    return (
-        <article id="work-experience">
-            <Typography variant="h4" gutterBottom>Work Experience</Typography>
+  const experienceData = [
+    {
+      title: 'Full Stack Engineer, OneBit Inc.',
+      date: 'Sep/2023 - Present',
+      description: 'OneBit Inc. is committed to helping businesses manage their finances by integrating sales and expenses into one software. I work on both frontend and backend development, ensuring seamless integration of features and deployment.',
+      responsibilities: [
+        { task: 'Developed frontend features with React and backend services with Node.js.', type: 'development' },
+        { task: 'Integrated Firebase for real-time data synchronization and user authentication.', type: 'devOps' },
+        { task: 'Implemented role-based access control to ensure secure user data handling.', type: 'security' },
+        { task: 'Automated deployment using GitHub Actions and streamlined CI/CD pipelines.', type: 'devOps' },
+        { task: 'Collaborated with the design team to implement highly interactive user interfaces.', type: 'design' },
+      ],
+    },
+    {
+      title: 'Information Technology Specialist (Application Software/Policy Planning), RIA-JMTC (US Army)',
+      date: 'Nov/2023 - Present',
+      description: 'At Rock Island Arsenal - Joint Manufacturing & Technology Center (RIA-JMTC), I handle troubleshooting software issues, managing databases, and administering Microsoft 365 solutions for smooth operations.',
+      responsibilities: [
+        { task: 'Resolved software and database issues with SQL, improving system reliability and uptime.', type: 'database' },
+        { task: 'Built PowerApps to automate business workflows, increasing productivity by 25%.', type: 'automation' },
+        { task: 'Managed Microsoft Active Directory for user account provisioning and security roles.', type: 'security' },
+        { task: 'Developed automation scripts with Power Automate to streamline repetitive tasks and reduce manual errors.', type: 'automation' },
+        { task: 'Collaborated with cross-functional teams to improve system security and compliance.', type: 'security' },
+      ],
+    },
+    {
+      title: 'IT Intern, ACC Rock Island',
+      date: 'May/2023 - Sep/2023',
+      description: 'During my internship, I gained hands-on experience working with data management, Python automation, and contributing to software development projects.',
+      responsibilities: [
+        { task: 'Used SQL, Python, and VBA for efficient data management and automation.', type: 'development' },
+        { task: 'Developed Python scripts to automate routine tasks and improve efficiency.', type: 'automation' },
+        { task: 'Contributed to software development using Java and participated in code reviews.', type: 'development' },
+        { task: 'Automated data entry workflows using VBA and Excel, reducing manual workload by 30%.', type: 'automation' },
+      ],
+    },
+    {
+      title: 'Service Leader, Chipotle Mexican Grill',
+      date: 'Aug/2017 - Sep/2023',
+      description: 'As a Service Leader, I managed a team of employees, trained new staff members, and ensured a positive work environment, resulting in the store being recognized as the district\'s first certified training restaurant.',
+      responsibilities: [
+        { task: 'Managed a team of employees and enforced company policies effectively.', type: 'management' },
+        { task: 'Trained new staff members and created a positive working environment.', type: 'training' },
+        { task: 'Achieved recognition as a certified training restaurant by fostering team growth.', type: 'training' },
+        { task: 'Ensured outstanding customer service and maintained a high level of operational efficiency.', type: 'customerService' },
+      ],
+    },
+  ];
 
-            <Paper elevation={3} style={{ padding: '16px', marginBottom: '16px' }}>
-                <Typography variant="h6">IT Intern, ACC Rock Island</Typography>
-                <Typography variant="subtitle1" color="textSecondary">May/2023 - Present</Typography>
-                <ul>
-                    <li>Utilized SQL for efficient data management, Python for automating tasks, and VBA and Macros for data sorting in Excel.</li>
-                    <li>Developing scripts in Python to automate routine tasks, thereby improving overall operational efficiency.</li>
-                    <li>Applying Java knowledge to contribute to software development projects.</li>
-                    <li>Using VBA and Macros to automate and optimize data sorting tasks in Excel, a skill I learned during my tenure.</li>
-                    <li>Collaborating with professionals on various projects to expand knowledge and skills in the field.</li>
-                    <li>Participating in real-world projects and experiencing first-hand how operations are carried out within a professional environment.</li>
-                </ul>
-            </Paper>
+  return (
+    <Box sx={{ padding: '60px 20px', background: 'linear-gradient(to bottom right, #e0eafc, #cfdef3)', marginTop: '80px' }}>
+      <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <Typography
+          variant="h3"
+          textAlign="center"
+          gutterBottom
+          color="primary"
+          sx={{
+            fontWeight: 'bold',
+            borderBottom: '4px solid #d4af37',
+            display: 'inline-block',
+            paddingBottom: '10px',
+            background: 'linear-gradient(to right, #1976D2, #d4af37)',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+          }}
+        >
+          Work Experience
+        </Typography>
+      </motion.div>
+      <Divider sx={{ mb: 4 }} />
 
-            <Paper elevation={3} style={{ padding: '16px', marginBottom: '16px' }}>
-                <Typography variant="h6">SERVICE LEADER, CHIPOTLE MEXICAN GRILL</Typography>
-                <Typography variant="subtitle1" color="textSecondary">Aug/2017 - Present</Typography>
-                <ul>
-                    <li>Managed a team of employees as the youngest manager in the district, demonstrating exceptional leadership and organizational skills.</li>
-                    <li>Enforced company policies, procedures, and safety protocols to maintain a safe and hygienic work environment for office and equipment.</li>
-                    <li>Fostered positive relationships with new team members while supporting existing staff's career growth and development, creating a positive and safe workspace environment.</li>
-                    <li>Delivered outstanding customer service while facilitating the onboarding and development of one team member per month.</li>
-                    <li>Managed a team of six employees per shift and facilitated ongoing employee development, resulting in our store being recognized as the district's first certified training restaurant.</li>
-                </ul>
-            </Paper>
-        </article>
-    );
+      {/* Swipe Hint */}
+      <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
+        <Typography variant="body2" color="textSecondary">
+          Swipe left or right to navigate
+        </Typography>
+      </Box>
+
+      {/* Swiper with pagination and navigation */}
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={true} // Enable navigation arrows
+        pagination={{ clickable: true }} // Ensure pagination is clickable
+        lazy={true} // Lazy loading for better performance
+        preloadImages={false}
+        modules={[Navigation, Pagination]} // Ensure Pagination and Navigation are added as modules
+        style={{ paddingBottom: '30px' }}
+      >
+        {experienceData.map((job, index) => (
+          <SwiperSlide key={index}>
+            <motion.div
+              initial={{ opacity: 0 }} // Simplified animation
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.3, duration: 0.5 }}
+            >
+              <Paper
+                elevation={5}
+                sx={{
+                  padding: { xs: '16px', sm: '24px' },
+                  marginBottom: '40px',
+                  backgroundColor: '#fff',
+                  borderRadius: '15px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  transition: 'all 0.3s ease',
+                  maxWidth: '800px',  // Set a max width to center the content
+                  margin: 'auto',  // Center the content
+                  '&:hover': {
+                    boxShadow: '0 12px 35px rgba(0, 0, 0, 0.15)',
+                    transform: 'translateY(-5px)',
+                  },
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <Tooltip title="Work">
+                    <Work sx={{ fontSize: '40px', color: '#1976D2' }} />
+                  </Tooltip>
+                  <Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        color: '#444',
+                        fontWeight: 'bold',
+                        position: 'relative',
+                        paddingBottom: '6px',
+                        '&:after': {
+                          content: '""',
+                          position: 'absolute',
+                          left: 0,
+                          bottom: 0,
+                          width: '100%',
+                          height: '3px',
+                          background: 'linear-gradient(to right, #1976D2, #d4af37)',
+                          borderRadius: '4px',
+                        },
+                      }}
+                    >
+                      {job.title}
+                    </Typography>
+                    <Typography variant="subtitle1" sx={{ fontStyle: 'italic', color: '#888' }}>
+                      {job.date}
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {job.description && (
+                  <Typography variant="body1" paragraph sx={{ marginTop: '12px', color: '#555', lineHeight: 1.7 }}>
+                    {job.description}
+                  </Typography>
+                )}
+
+                <Typography variant="body2" color="textSecondary" gutterBottom>
+                  Key Responsibilities:
+                </Typography>
+                <List>
+                  {job.responsibilities.map((task, i) => (
+                    <ListItem key={i}>
+                      <ListItemIcon>
+                        {task.type === 'development' ? (
+                          <Code sx={{ color: '#1976D2' }} />
+                        ) : task.type === 'devOps' || task.type === 'automation' ? (
+                          <Build sx={{ color: '#1976D2' }} />
+                        ) : task.type === 'training' ? (
+                          <School sx={{ color: '#1976D2' }} />
+                        ) : task.type === 'management' || task.type === 'teamwork' ? (
+                          <Group sx={{ color: '#1976D2' }} />
+                        ) : (
+                          <Build sx={{ color: '#1976D2' }} />
+                        )}
+                      </ListItemIcon>
+                      <Typography variant="body2" sx={{ color: '#333', lineHeight: 1.6 }}>
+                        {task.task}
+                      </Typography>
+                    </ListItem>
+                  ))}
+                </List>
+              </Paper>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
+  );
 };
 
 export default WorkExperience;

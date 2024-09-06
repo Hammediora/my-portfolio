@@ -1,4 +1,3 @@
-// src/components/sharedHeader/TechnicalSkills.js
 import React from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemIcon, ListItemText, Divider, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -19,7 +18,9 @@ const TechnicalSkills = ({ expanded, onAccordionToggle }) => {
       </AccordionSummary>
 
       <AccordionDetails>
-        <Typography variant="h6">Programming Languages & Frameworks</Typography>
+        <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+          Programming Languages & Frameworks
+        </Typography>
         <List>
           <ListItem>
             <ListItemIcon><CodeIcon /></ListItemIcon>
@@ -33,7 +34,9 @@ const TechnicalSkills = ({ expanded, onAccordionToggle }) => {
 
         <Divider sx={{ my: 2 }} />
 
-        <Typography variant="h6">Cloud & DevOps</Typography>
+        <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+          Cloud & DevOps
+        </Typography>
         <List>
           <ListItem>
             <ListItemIcon><CloudIcon /></ListItemIcon>

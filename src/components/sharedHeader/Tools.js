@@ -1,8 +1,7 @@
-// src/components/sharedHeader/Tools.js
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { FaReact, FaNodeJs, FaGitAlt, FaAws, FaPython, FaGoogle } from 'react-icons/fa'; // Icons from react-icons
-import { SiTypescript, SiJavascript, SiNextdotjs, SiMysql, SiPostgresql, SiPostman } from 'react-icons/si'; // Icons for specific technologies
+import { FaReact, FaNodeJs, FaGitAlt, FaAws, FaPython, FaGoogle } from 'react-icons/fa'; 
+import { SiTypescript, SiJavascript, SiNextdotjs, SiMysql, SiPostgresql, SiPostman } from 'react-icons/si'; 
 
 const toolsData = [
   { name: 'React js/native', icon: <FaReact style={{ color: '#61DAFB', fontSize: '48px' }} /> },
@@ -22,14 +21,14 @@ const toolsData = [
 const Tools = () => {
   return (
     <Box textAlign="center" mt={4} mb={4}>
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h4" color="primary" gutterBottom sx={{ fontWeight: 'bold' }}>
         Tools I'm Familiar With
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {toolsData.map((tool, index) => (
           <Grid item xs={6} sm={4} md={3} key={index} textAlign="center">
             {tool.icon}
-            <Typography variant="body1" mt={1}>{tool.name}</Typography>
+            <Typography variant="body1" sx={{ marginTop: 1 }}>{tool.name}</Typography>
           </Grid>
         ))}
       </Grid>

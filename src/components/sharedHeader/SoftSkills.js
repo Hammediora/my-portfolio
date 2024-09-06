@@ -1,4 +1,3 @@
-// src/components/sharedHeader/SoftSkills.js
 import React from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
