@@ -9,12 +9,12 @@ const SkillsTabs = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [expandedAccordion, setExpandedAccordion] = useState(0);
 
-  const theme = useTheme(); // Use theme to detect small screens
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Breakpoint for small screens
+  const theme = useTheme(); 
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
 
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
-    setExpandedAccordion(newValue); // Match accordion state
+    setExpandedAccordion(newValue); 
   };
 
   const handleAccordionToggle = (panel) => {
@@ -23,40 +23,43 @@ const SkillsTabs = () => {
 
   return (
     <>
-      <Box textAlign="center" mt={4} mb={4}>
+      <Box id="projects" sx={{ padding: '30px 20px', background: 'linear-gradient(to bottom right, #e0eafc, #cfdef3)' , marginTop: '80px'}}>
         <Typography
-          variant="h3"
-          color="primary"
-          gutterBottom
-          sx={{
-            fontWeight: 'bold',
-            background: 'linear-gradient(to right, #1976D2, #d4af37)',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
-          }}
+           variant="h3"
+           textAlign="center"
+           gutterBottom
+           color="primary"
+           sx={{
+               fontWeight: 'bold',
+               borderBottom: '4px solid #d4af37',
+               display: 'inline-block',
+               paddingBottom: '10px',
+               background: 'linear-gradient(to right, #1976D2, #d4af37)',
+               WebkitBackgroundClip: 'text',
+               color: 'transparent',
+           }}
         >
           Skills and Certifications
         </Typography>
-      </Box>
 
       <Paper elevation={3} sx={{ mt: 4, p: 2, backgroundColor: 'background.paper', borderRadius: '15px' }}>
         <Grid container spacing={2}>
           {/* Tabs Section */}
           <Grid item xs={12} sm={3}>
             <Tabs
-              orientation={isSmallScreen ? 'horizontal' : 'vertical'} // Change orientation based on screen size
-              variant={isSmallScreen ? 'scrollable' : 'standard'} // Enable scrollable for small screens
-              scrollButtons={isSmallScreen ? 'auto' : 'off'} // Auto scroll buttons on small screens
+              orientation={isSmallScreen ? 'horizontal' : 'vertical'} 
+              variant={isSmallScreen ? 'scrollable' : 'standard'} 
+              scrollButtons={isSmallScreen ? 'auto' : 'off'} 
               value={selectedTab}
               onChange={handleTabChange}
               indicatorColor="primary"
               textColor="primary"
               sx={{
-                borderRight: isSmallScreen ? 'none' : 1, // Remove border on small screens
-                borderBottom: isSmallScreen ? 1 : 'none', // Add bottom border for horizontal tabs
+                borderRight: isSmallScreen ? 'none' : 1, 
+                borderBottom: isSmallScreen ? 1 : 'none', 
                 borderColor: 'divider',
                 '& .MuiTab-root': {
-                  padding: isSmallScreen ? '8px 12px' : '16px 24px', // Adjust padding based on screen size
+                  padding: isSmallScreen ? '8px 12px' : '16px 24px', 
                   textTransform: 'none',
                 },
               }}
@@ -104,11 +107,12 @@ const SkillsTabs = () => {
               {selectedTab === 2 && (
                 <Certifications expanded={expandedAccordion === 2} onAccordionToggle={() => handleAccordionToggle(2)} />
               )}
-              {selectedTab === 3 && <Tools />} {/* Show tools when selected */}
+              {selectedTab === 3 && <Tools />} 
             </Box>
           </Grid>
         </Grid>
       </Paper>
+      </Box>
     </>
   );
 };
