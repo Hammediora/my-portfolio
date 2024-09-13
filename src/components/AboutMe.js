@@ -38,7 +38,7 @@ const AboutMe = () => {
         position: 'relative',
         background: 'background.paper',
         borderRadius: '20px',
-        boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.1)', // Elevation for the container
+        boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.1)', 
         overflow: 'hidden',
       }}
     >
@@ -50,7 +50,7 @@ const AboutMe = () => {
           right: '-100px',
           width: '200px',
           height: '200px',
-          background: 'rgba(212, 175, 55, 0.4)', // Gold blob
+          background: 'rgba(212, 175, 55, 0.4)',
           borderRadius: '50%',
           zIndex: -1,
         }}
@@ -75,7 +75,7 @@ const AboutMe = () => {
                 alignItems: 'center', 
                 fontWeight: 'bold',
                 fontSize: '2.5rem',
-                letterSpacing: '1.5px', // Increased letter spacing for elegance
+                letterSpacing: '1.5px', 
                 background: 'linear-gradient(to right, #1976D2, #d4af37)', 
                 WebkitBackgroundClip: 'text', 
                 color: 'transparent', 

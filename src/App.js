@@ -6,7 +6,7 @@ import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Projects from './components/Projects';
+import Projects from './components/Project/Projects';
 import WorkExperience from './components/WorkExperience';
 import EducationSkills from './components/EducationSkills';
 import ContactInfo from './components/ContactInfo';

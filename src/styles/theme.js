@@ -63,7 +63,7 @@ const darkTheme = createTheme({
     },
     background: {
       default: '#1a1a1a', // Solid dark color for default background
-      paper: '#1a1a1a', // Dark gray paper for cards
+      paper: '#4e4b43', // Dark gray paper for cards
     },
     text: {
       primary: '#ffffff', // White text for dark mode

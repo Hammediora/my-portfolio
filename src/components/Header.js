@@ -36,9 +36,9 @@ const Header = ({ darkMode, onThemeChange }) => {
               fontWeight: 'bold', 
               color: darkMode ? '#d4af37' : '#1976D2', 
               cursor: 'pointer',
-              '&:hover': { color: '#d4af37' }, // Gold on hover
+              '&:hover': { color: '#d4af37' },
             }}
-            onClick={() => scroll.scrollToTop()} // Scroll to top when clicked
+            onClick={() => scroll.scrollToTop()} 
           >
             Hammed Bello
           </Typography>
@@ -50,7 +50,7 @@ const Header = ({ darkMode, onThemeChange }) => {
                 key={section}
                 color="inherit"
                 component={Link}
-                to={section.toLowerCase().replace(/ /g, '-')} // Generate id based on section name
+                to={section.toLowerCase().replace(/ /g, '-')} 
                 smooth={true}
                 offset={-70}
                 duration={500}
@@ -71,7 +71,7 @@ const Header = ({ darkMode, onThemeChange }) => {
             edge="end"
             color="inherit"
             aria-label="menu"
-            sx={{ display: { xs: 'flex', md: 'none' } }} // Show only on small screens
+            sx={{ display: { xs: 'flex', md: 'none' } }} 
             onClick={toggleDrawer}
           >
             <MenuIcon />
@@ -84,7 +84,7 @@ const Header = ({ darkMode, onThemeChange }) => {
             anchor="right"
             open={drawerOpen}
             onClose={toggleDrawer}
-            sx={{ display: { xs: 'block', md: 'none' } }} // Only for small screens
+            sx={{ display: { xs: 'block', md: 'none' } }} 
             >
             <Box
                 sx={{ width: 250 }}
@@ -102,7 +102,7 @@ const Header = ({ darkMode, onThemeChange }) => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    onClick={toggleDrawer} // Ensure the drawer closes after clicking
+                    onClick={toggleDrawer} 
                     >
                     <ListItemText primary={section} />
                     </ListItem>
