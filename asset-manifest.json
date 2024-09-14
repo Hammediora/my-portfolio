@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.b4d57258.css",
-    "main.js": "/my-portfolio/static/js/main.94c99a82.js",
+    "main.css": "/my-portfolio/static/css/main.6826747a.css",
+    "main.js": "/my-portfolio/static/js/main.25aebca2.js",
     "static/media/BELLO_HAMMED 3.jpg": "/my-portfolio/static/media/BELLO_HAMMED 3.9a65e7874ac375529fd0.jpg",
     "static/media/slick.svg": "/my-portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/my-portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/my-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-portfolio/index.html",
-    "main.b4d57258.css.map": "/my-portfolio/static/css/main.b4d57258.css.map",
-    "main.94c99a82.js.map": "/my-portfolio/static/js/main.94c99a82.js.map"
+    "main.6826747a.css.map": "/my-portfolio/static/css/main.6826747a.css.map",
+    "main.25aebca2.js.map": "/my-portfolio/static/js/main.25aebca2.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4d57258.css",
-    "static/js/main.94c99a82.js"
+    "static/css/main.6826747a.css",
+    "static/js/main.25aebca2.js"
   ]
 }
