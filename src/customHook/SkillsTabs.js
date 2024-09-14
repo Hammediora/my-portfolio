@@ -25,10 +25,10 @@ const SkillsTabs = () => {
   // Gradient background animation
   const animatedGradient = {
     background: theme.palette.mode === 'dark'
-      ? 'linear-gradient(270deg, #333, #111, #333)' // Dark mode: Darker animated gradient
-      : 'linear-gradient(270deg, #e0eafc, #f4f7fa, #dce5f0)', // Light mode: Lighter animated gradient
-    backgroundSize: '400% 400%',
-    animation: 'gradientAnimation 15s ease infinite',
+      ? 'linear-gradient(270deg, #000, #333, #555, #111)' 
+      : 'linear-gradient(270deg, #dce5f0, #c9d8e9, #b0c7e2, #91b3d4)', 
+    backgroundSize: '600% 600%', 
+    animation: 'gradientAnimation 8s ease infinite', 
     '@keyframes gradientAnimation': {
       '0%': { backgroundPosition: '0% 50%' },
       '50%': { backgroundPosition: '100% 50%' },

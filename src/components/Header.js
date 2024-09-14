@@ -17,7 +17,7 @@ const Header = ({ darkMode, onThemeChange }) => {
     <Box sx={{ flexGrow: 1 }}>
       {/* AppBar (Navigation) */}
       <AppBar 
-        position="sticky"
+        position="fixed"
         elevation={1}
         sx={{ 
           background: 'rgba(255, 255, 255, 0.9)', 
@@ -129,6 +129,7 @@ const Header = ({ darkMode, onThemeChange }) => {
             ? 'linear-gradient(to right, #000428, #004e92)' // Dark mode: Dark blue gradient
             : 'linear-gradient(to right, #1976D2, #d4af37)', // Light mode: Blue to gold gradient
           color: 'white',
+          mt: 10,
           padding: { xs: '40px 20px', sm: '80px 20px' },
           textAlign: 'center',
           position: 'relative',

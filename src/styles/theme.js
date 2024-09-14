@@ -1,7 +1,21 @@
 // src/styles/theme.js
 import { createTheme } from '@mui/material/styles';
 
-// Light Theme (no changes, just for reference)
+// Helper function for animated gradient background
+const animatedGradient = (mode) => ({
+  background: mode === 'dark'
+    ? 'linear-gradient(270deg, #333, #111, #333)' // Dark mode: darker gradient
+    : 'linear-gradient(270deg, #e0eafc, #f4f7fa, #dce5f0)', // Light mode: lighter gradient
+  backgroundSize: '400% 400%',
+  animation: 'gradientAnimation 15s ease infinite',
+  '@keyframes gradientAnimation': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
+});
+
+// Light Theme
 const lightTheme = createTheme({
   palette: {
     primary: {
@@ -12,6 +26,7 @@ const lightTheme = createTheme({
     },
     background: {
       default: '#f4f4f4', // Soft gray background
+      paper: '#ffffff',  // White for cards
     },
     text: {
       primary: '#333333', // Dark text for light theme
@@ -49,10 +64,37 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          overflow: 'hidden',
+          padding: '16px', // Default padding for Paper components
+          borderRadius: '12px',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '-50px',
+            right: '-100px',
+            width: '200px',
+            height: '200px',
+            background: 'rgba(212, 175, 55, 0.4)', // Light gold floating shape
+            borderRadius: '50%',
+            zIndex: -1,
+            animation: 'backgroundAnimation 6s ease-in-out infinite',
+          },
+          '@keyframes backgroundAnimation': {
+            '0%': { transform: 'scale(1)' },
+            '50%': { transform: 'scale(1.2)' },
+            '100%': { transform: 'scale(1)' },
+          },
+        },
+      },
+    },
   },
 });
 
-// Dark Theme without gradient in background
+// Dark Theme with the same animated background
 const darkTheme = createTheme({
   palette: {
     primary: {
@@ -102,7 +144,34 @@ const darkTheme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          overflow: 'hidden',
+          padding: '16px', // Default padding for Paper components
+          borderRadius: '12px',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '-50px',
+            right: '-100px',
+            width: '200px',
+            height: '200px',
+            background: 'rgba(212, 175, 55, 0.4)', // Light gold floating shape for dark mode
+            borderRadius: '50%',
+            zIndex: -1,
+            animation: 'backgroundAnimation 6s ease-in-out infinite',
+          },
+          '@keyframes backgroundAnimation': {
+            '0%': { transform: 'scale(1)' },
+            '50%': { transform: 'scale(1.2)' },
+            '100%': { transform: 'scale(1)' },
+          },
+        },
+      },
+    },
   },
 });
 
-export { lightTheme, darkTheme };
+export { lightTheme, darkTheme, animatedGradient };

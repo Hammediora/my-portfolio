@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiFirebase, SiCss3, SiGithub, SiJavascript } from 'react-icons/si';
 
+
 const projectData = [
     {
         title: 'Employee Scheduling System',
@@ -38,7 +39,20 @@ const projectData = [
 
 const Projects = () => {
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+    const animatedGradient = {
+        background: theme.palette.mode === 'dark'
+          ? 'linear-gradient(270deg, #000, #333, #555, #111)' 
+          : 'linear-gradient(270deg, #dce5f0, #c9d8e9, #b0c7e2, #91b3d4)', 
+        backgroundSize: '600% 600%', 
+        animation: 'gradientAnimation 8s ease infinite', 
+        '@keyframes gradientAnimation': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      };
 
     return (
         <Box 
@@ -47,7 +61,8 @@ const Projects = () => {
             padding: '30px 20px', 
             borderRadius: '12px',
             boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-            marginTop: '80px' 
+            marginTop: '80px',
+            ...animatedGradient,
           }}
         >
             {/* Section Heading */}
@@ -82,7 +97,7 @@ const Projects = () => {
             <Swiper
                 spaceBetween={isSmallScreen ? 10 : 50} 
                 slidesPerView={1}
-                //navigation={true}
+                navigation={!isSmallScreen}
                 pagination={{ clickable: true }}
                 lazy={true}
                 preloadImages={false}

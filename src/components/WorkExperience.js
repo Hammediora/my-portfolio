@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Typography, Box, Divider, List, ListItem, ListItemIcon, Tooltip } from '@mui/material';
+import { Paper, Typography, Box, Divider, List, ListItem, useTheme, ListItemIcon, Tooltip, useMediaQuery } from '@mui/material';
 import { Work, Code, Build, School, Group } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -12,6 +12,22 @@ import 'swiper/css/pagination';
 
 
 const WorkExperience = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  
+  const animatedGradient = {
+    background: theme.palette.mode === 'dark'
+      ? 'linear-gradient(270deg, #000, #333, #555, #111)' 
+      : 'linear-gradient(270deg, #dce5f0, #c9d8e9, #b0c7e2, #91b3d4)', 
+    backgroundSize: '600% 600%', 
+    animation: 'gradientAnimation 8s ease infinite', 
+    '@keyframes gradientAnimation': {
+      '0%': { backgroundPosition: '0% 50%' },
+      '50%': { backgroundPosition: '100% 50%' },
+      '100%': { backgroundPosition: '0% 50%' },
+    },
+  };
+
   const experienceData = [
     {
       title: 'Full Stack Engineer, OneBit Inc.',
@@ -62,7 +78,7 @@ const WorkExperience = () => {
   ];
 
   return (
-    <Box sx={{ padding: '60px 20px', background: 'linear-gradient(to bottom right, #e0eafc, #cfdef3)', marginTop: '80px' }}>
+    <Box sx={{ padding: '60px 20px', marginTop: '80px',  ...animatedGradient, }}>
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <Typography
           variant="h3"
@@ -95,11 +111,11 @@ const WorkExperience = () => {
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
-        navigation={true} // Enable navigation arrows
-        pagination={{ clickable: true }} // Ensure pagination is clickable
-        lazy={true} // Lazy loading for better performance
+        navigation={!isSmallScreen} 
+        pagination={{ clickable: true }} 
+        lazy={true}
         preloadImages={false}
-        modules={[Navigation, Pagination]} // Ensure Pagination and Navigation are added as modules
+        modules={[Navigation, Pagination]} 
         style={{ paddingBottom: '30px' }}
       >
         {experienceData.map((job, index) => (

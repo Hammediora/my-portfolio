@@ -12,7 +12,7 @@ import EducationSkills from './components/EducationSkills';
 import ContactInfo from './components/ContactInfo';
 import Footer from './components/Footer';
 import ContactFormModal from './components/ContactFormModal';
-import GameModal from './components/GameModal';
+import GameModal from './components/Game/GameModal';
 import ScrollToTopButton from './customHook/ScrollToTopButton';
 import SkillsTabs from './customHook/SkillsTabs';
 
