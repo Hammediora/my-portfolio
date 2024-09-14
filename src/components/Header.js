@@ -164,7 +164,7 @@ const Header = ({ darkMode, onThemeChange }) => {
                 fontWeight: 'bold',
                 fontSize: { xs: '2rem', sm: '3rem' },
                 marginBottom: '15px',
-                letterSpacing: '2px', // Subtle spacing for a professional look
+                letterSpacing: '2px', 
               }}
             >
               Hammed Bello
@@ -200,8 +200,8 @@ const Header = ({ darkMode, onThemeChange }) => {
             bottom: '-50px',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: '300px',
-            height: '300px',
+            width: '30vw',
+            height: '30vw',
             background: darkMode ? 'rgba(212, 175, 55, 0.2)' : 'rgba(25, 118, 210, 0.3)', // Change color based on theme
             borderRadius: '50%',
             zIndex: -1,
@@ -217,13 +217,13 @@ const Header = ({ darkMode, onThemeChange }) => {
 // Custom styles for the navigation buttons
 const navButtonStyles = {
   textTransform: 'none',
-  fontSize: '1rem',
+  fontSize: { xs: '0.875rem', md: '1rem' },
   fontWeight: 'bold',
   color: '#333',
   borderRadius: '10px',
   backgroundColor: 'rgba(0, 0, 0, 0.05)',
   transition: 'all 0.3s ease',
-  padding: '6px 16px',
+  padding: { xs: '4px 12px', md: '6px 16px' },
   '&:hover': {
     backgroundColor: '#d4af37',
     color: 'white',

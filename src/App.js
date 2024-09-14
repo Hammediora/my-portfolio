@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, CssBaseline, Box, Typography,} from '@mui/material'; 
+import { Container, CssBaseline, Box, Typography } from '@mui/material'; 
 import { ThemeProvider } from '@mui/material/styles'; 
 import { lightTheme, darkTheme } from './styles/theme'; 
 import Header from './components/Header';
@@ -19,7 +19,6 @@ import SkillsTabs from './customHook/SkillsTabs';
 function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isGameModalOpen, setIsGameModalOpen] = useState(false);
-
   const [darkMode, setDarkMode] = useState(false);
 
   const handleThemeChange = () => {
@@ -32,34 +31,34 @@ function App() {
       <Container component="main" maxWidth="lg">
         <Header darkMode={darkMode} onThemeChange={handleThemeChange} /> 
 
-        {/* Main Content */}
+        {/* Main Content - Consistent Spacing */}
         <Box id="about-me" textAlign="center" mt={4} mb={4}>
-          <Typography variant="h1" color="primary" gutterBottom>
+          <Typography variant="h1" color="primary" gutterBottom sx={{ fontSize: { xs: '2rem', md: '4rem' }}}>
             Welcome to My Portfolio
           </Typography>
-          <Typography variant="h2" color="text.primary">
+          <Typography variant="h2" color="text.primary" sx={{ fontSize: { xs: '1.5rem', md: '3rem' }}}>
             Explore my projects, skills, and experiences.
           </Typography>
            <AboutMe />
         </Box>
 
-        <Box id="education-&-skills">
+        <Box id="education-&-skills" textAlign="center" mt={6} mb={6} px={2}>
           <EducationSkills />
         </Box>
 
-        <Box id="skills-tabs">
+        <Box id="skills-tabs" mt={6} mb={6} px={2}>
           <SkillsTabs />
         </Box>
 
-        <Box id="projects">
+        <Box id="projects" mt={6} mb={6} px={2}>
           <Projects />
         </Box>
 
-        <Box id="work-experience">
+        <Box id="work-experience" mt={6} mb={6} px={2}>
           <WorkExperience />
         </Box>
 
-        <Box id="contact">
+        <Box id="contact" textAlign="center" mt={6} mb={6} px={2}>
           <ContactInfo 
             onContactClick={() => setIsContactModalOpen(true)} 
             onGameClick={() => setIsGameModalOpen(true)} 
@@ -69,6 +68,7 @@ function App() {
         {/* Modals */}
         <ContactFormModal isOpen={isContactModalOpen} closeModal={() => setIsContactModalOpen(false)} />
         <GameModal isOpen={isGameModalOpen} closeModal={() => setIsGameModalOpen(false)} />
+
         <ScrollToTopButton />
         <Footer />
       </Container>

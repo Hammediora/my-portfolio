@@ -30,30 +30,30 @@ const AboutMe = () => {
 
   return (
     <Box 
-      id="about-me" 
-      sx={{ 
-        marginTop: 6, 
-        marginBottom: 6, 
-        padding: { xs: 2, sm: 4 }, 
-        position: 'relative',
-        background: 'background.paper',
-        borderRadius: '20px',
-        boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.1)', 
-        overflow: 'hidden',
+    id="about-me" 
+    sx={{ 
+      marginTop: 6, 
+      marginBottom: 6, 
+      padding: { xs: 2, sm: 4 }, 
+      position: 'relative',
+      background: 'background.paper',
+      borderRadius: '20px',
+      boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.1)', 
+      overflow: 'hidden',
+    }}
+  >
+    {/* Background Floating Shape */}
+    <motion.div
+      style={{
+        position: 'absolute',
+        top: '-50px',
+        right: '-100px',
+        width: '200px',
+        height: '200px',
+        background: 'rgba(212, 175, 55, 0.4)',
+        borderRadius: '50%',
+        zIndex: -1,
       }}
-    >
-      {/* Background Floating Shape */}
-      <motion.div
-        style={{
-          position: 'absolute',
-          top: '-50px',
-          right: '-100px',
-          width: '200px',
-          height: '200px',
-          background: 'rgba(212, 175, 55, 0.4)',
-          borderRadius: '50%',
-          zIndex: -1,
-        }}
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -74,7 +74,8 @@ const AboutMe = () => {
                 display: 'flex', 
                 alignItems: 'center', 
                 fontWeight: 'bold',
-                fontSize: '2.5rem',
+                fontSize: { xs: '2rem', md: '3rem' },
+                //fontSize: '2.5rem',
                 letterSpacing: '1.5px', 
                 background: 'linear-gradient(to right, #1976D2, #d4af37)', 
                 WebkitBackgroundClip: 'text', 

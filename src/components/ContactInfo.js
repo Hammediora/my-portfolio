@@ -27,24 +27,36 @@ const ContactInfo = ({ onContactClick, onGameClick }) => {
               sx={{
                 fontWeight: 'bold',
                 textAlign: 'center',
+                fontSize: { xs: '2rem', md: '3rem' },
                 background: 'linear-gradient(to right, #1976D2, #d4af37)',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
+                position: 'relative',
+                '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '3px',
+                    background: 'linear-gradient(to right, #1976D2, #d4af37)',
+                    borderRadius: '4px',
+                }
               }}
             >
               Contact Information
             </Typography>
 
             <Box sx={{ textAlign: 'center', marginTop: 2, flexGrow: 1 }}>
-              <Typography variant="body1" gutterBottom>
+              <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1rem', sm: '1.25rem' }}}>
                 Email: <Link href="mailto:HammedBello97@gmail.com" underline="hover" color="primary">HammedBello97@gmail.com</Link>
               </Typography>
 
-              <Typography variant="body1" gutterBottom>
+              <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1rem', sm: '1.25rem' }}}>
                 Phone: <Link href="tel:7732904887" underline="hover" color="primary">773-290-4887</Link>
               </Typography>
 
-              <Typography variant="body1" gutterBottom>
+              <Typography variant="body1" gutterBottom sx={{fontSize: { xs: '1rem', sm: '1rem' }}}>
                 LinkedIn: <Link href="https://www.linkedin.com/in/hammed-bello-58a304254" underline="hover" color="primary" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/hammed-bello-58a304254</Link>
               </Typography>
             </Box>
@@ -59,10 +71,10 @@ const ContactInfo = ({ onContactClick, onGameClick }) => {
               padding: 3,
               borderRadius: '15px',
               backgroundColor: 'background.paper',
-              height: '100%', // Ensure the card takes the full height
+              height: '100%',
               display: 'flex',
-              flexDirection: 'column', // Align the content in a column
-              justifyContent: 'space-between', // Distribute content evenly
+              flexDirection: 'column', 
+              justifyContent: 'space-between', 
             }}
           >
             <Typography
@@ -72,9 +84,21 @@ const ContactInfo = ({ onContactClick, onGameClick }) => {
               sx={{
                 fontWeight: 'bold',
                 textAlign: 'center',
+                fontSize: { xs: '2rem', md: '3rem' },
                 background: 'linear-gradient(to right, #1976D2, #d4af37)',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
+                position: 'relative',
+                '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '3px',
+                    background: 'linear-gradient(to right, #1976D2, #d4af37)',
+                    borderRadius: '4px',
+                }
               }}
             >
               Actions
