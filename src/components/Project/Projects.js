@@ -77,6 +77,7 @@ const Projects = () => {
                         borderBottom: '4px solid #d4af37',
                         display: 'inline-block',
                         paddingBottom: '10px',
+                        fontSize: { xs: '2rem', md: '3rem' },
                         background: 'linear-gradient(to right, #1976D2, #d4af37)',
                         WebkitBackgroundClip: 'text',
                         color: 'transparent',

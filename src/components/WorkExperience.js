@@ -31,7 +31,7 @@ const WorkExperience = () => {
   const experienceData = [
     {
       title: 'Full Stack Engineer, OneBit Inc.',
-      date: 'Sep/2023 - Present',
+      date: 'December 2023 - Present',
       description: 'OneBit Inc. is committed to helping businesses manage their finances by integrating sales and expenses into one software. I work on both frontend and backend development, ensuring seamless integration of features and deployment.',
       responsibilities: [
         { task: 'Developed frontend features with React and backend services with Node.js.', type: 'development' },
@@ -43,7 +43,7 @@ const WorkExperience = () => {
     },
     {
       title: 'Information Technology Specialist (Application Software/Policy Planning), RIA-JMTC (US Army)',
-      date: 'Nov/2023 - Present',
+      date: 'March 2024 - Present',
       description: 'At Rock Island Arsenal - Joint Manufacturing & Technology Center (RIA-JMTC), I handle troubleshooting software issues, managing databases, and administering Microsoft 365 solutions for smooth operations.',
       responsibilities: [
         { task: 'Resolved software and database issues with SQL, improving system reliability and uptime.', type: 'database' },
@@ -89,6 +89,7 @@ const WorkExperience = () => {
             fontWeight: 'bold',
             borderBottom: '4px solid #d4af37',
             display: 'inline-block',
+            fontSize: { xs: '2rem', md: '3rem' },
             paddingBottom: '10px',
             background: 'linear-gradient(to right, #1976D2, #d4af37)',
             WebkitBackgroundClip: 'text',
@@ -121,7 +122,7 @@ const WorkExperience = () => {
         {experienceData.map((job, index) => (
           <SwiperSlide key={index}>
             <motion.div
-              initial={{ opacity: 0 }} // Simplified animation
+              initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }}
               transition={{ delay: index * 0.3, duration: 0.5 }}
             >
@@ -134,8 +135,8 @@ const WorkExperience = () => {
                   borderRadius: '15px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                   transition: 'all 0.3s ease',
-                  maxWidth: '800px',  // Set a max width to center the content
-                  margin: 'auto',  // Center the content
+                  maxWidth: '800px',  
+                  margin: 'auto',
                   '&:hover': {
                     boxShadow: '0 12px 35px rgba(0, 0, 0, 0.15)',
                     transform: 'translateY(-5px)',
@@ -152,6 +153,7 @@ const WorkExperience = () => {
                       sx={{
                         color: '#444',
                         fontWeight: 'bold',
+                        fontSize: { xs: '1.25rem', md: '1.5rem' },
                         position: 'relative',
                         paddingBottom: '6px',
                         '&:after': {

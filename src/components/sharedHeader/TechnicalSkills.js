@@ -66,7 +66,7 @@ const TechnicalSkills = ({ expanded, onAccordionToggle }) => {
             sx={{
               fontWeight: 'bold',
               mb: 1,
-              background: 'linear-gradient(to right, #1976D2, #d4af37)', // Gradient header
+              background: 'linear-gradient(to right, #1976D2, #d4af37)', 
               WebkitBackgroundClip: 'text',
               color: 'transparent',
             }}

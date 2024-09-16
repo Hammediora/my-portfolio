@@ -62,6 +62,7 @@ const SkillsTabs = () => {
             sx={{
               fontWeight: 'bold',
               display: 'inline-block',
+              fontSize: { xs: '2rem', md: '3rem' },
               paddingBottom: '12px',
               background: 'linear-gradient(to right, #1976D2, #d4af37)',
               WebkitBackgroundClip: 'text',
